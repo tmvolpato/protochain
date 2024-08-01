@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "51620cfc-3b9f-4c2b-a95d-d02b6f50637a",
+		"name": "Protochain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "433754"
+	},
+	"item": [
+		{
+			"name": "Get all blocks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{blockchain}}status",
+					"host": [
+						"{{blockchain}}status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get block",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{blockchain}}blocks/2",
+					"host": [
+						"{{blockchain}}blocks"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New block",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hash\": \"\",\n    \"index\": 1,\n    \"data\":  \"block 2\",\n    \"previousHash\": \"9e80e043411a82eb00e87384c14af53bb1ee2f2b1abf2c705066b5e8a8fb2996\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{blockchain}}blocks",
+					"host": [
+						"{{blockchain}}blocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Next block",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{blockchain}}blocks/next",
+					"host": [
+						"{{blockchain}}blocks"
+					],
+					"path": [
+						"next"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hash\": \"\",\n    \"data\": \"txt1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{blockchain}}transactions",
+					"host": [
+						"{{blockchain}}transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{blockchain}}transactions/4c2a2d5cc24f2b423d8224350737a5a9f57994b2f9d60b5cd4bf7ca78fb7b18d",
+					"host": [
+						"{{blockchain}}transactions"
+					],
+					"path": [
+						"4c2a2d5cc24f2b423d8224350737a5a9f57994b2f9d60b5cd4bf7ca78fb7b18d"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status Blockchain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{blockchain}}status",
+					"host": [
+						"{{blockchain}}status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
